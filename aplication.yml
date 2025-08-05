@@ -7,6 +7,15 @@ spec:
   project: default
 
   source: 
-    repoURL: git@github.com:KralRo/infra.git
+    repoURL: git@github.com:KralRo/infra/argocd-app.git
     targetRevision: HEAD
-    path: argocd-app
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
