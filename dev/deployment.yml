@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: localhost:6500/myapp:1
+        image: kralr/myapp:1
         ports:
         - containerPort: 8080
