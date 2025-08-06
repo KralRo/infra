@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: Ingress
+  namespace: ingress-nginx
+spec:
+  rules:
+    - host: web2r.cz
+      http:
+        paths:
+          -backend:
+            serviceName: myapp-service
+            servicePort: 5000
