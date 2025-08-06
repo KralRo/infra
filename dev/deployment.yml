@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: nanajanashia/argocd-app:1.2
+        image: localhost:6500/myapp:1
         ports:
         - containerPort: 8080
