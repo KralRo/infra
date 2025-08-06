@@ -7,7 +7,7 @@ spec:
   project: default
 
   source: 
-    repoURL: https://github.com/KralRo/infra/argocd-app.git
+    repoURL: https://github.com/KralRo/infra.git
     targetRevision: HEAD
     path: dev
   destination:
