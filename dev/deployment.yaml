@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: kralr/myapp:1
+        image: localhost:6500/myapp:latest
         ports:
         - containerPort: 5000
         resources:
