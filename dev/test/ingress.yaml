@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+king: Ingress
+metadata:
+  name: ingress-nginxservice-a
+spec:
+  ingressClassName: nginx-servicea
+  rules:
+  - host: web2r.cz
+    http:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginxservice
+            port:
+              number: 8085
