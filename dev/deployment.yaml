@@ -2,18 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
+  namespace: myapp
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginxdeployment
+      app: myapp
   template:
     metadata:
       labels:
-        app: nginxdeployment
+        app: myapp
     spec:
       containers:
-      - name: nginxdeployment
-        image: nginx:latest
+      - name: myapp
+        image: kralr/myapp:1
         ports:
-        - containerPort: 80
+        - containerPort: 5000
