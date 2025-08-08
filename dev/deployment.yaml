@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: kralr/myapp:5
+        image: kralr/myapp:6
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
@@ -32,3 +32,9 @@ spec:
             port: 5000
           initialDelaySeconds: 5
           periodSeconds: 5
+        startupProbe:
+          httpGet:
+            path: /started
+            port: 5000
+          failureThreshold: 3    
+          periodSeconds: 10
