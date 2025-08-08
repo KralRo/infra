@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: myapp:2
+        image: myapp:3
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
