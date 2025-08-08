@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: myapp:3
+        image: kralr/myapp:3
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
