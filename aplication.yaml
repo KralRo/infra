@@ -2,18 +2,20 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp-argo-application
-  namespace: argocd           # Must match Argo CD's install namespace
+  namespace: argocd           
 spec: 
-  project: myapp-dev-project  # Must match the AppProject name
+  project: myapp-dev-project  
 
   source: 
     repoURL: https://github.com/KralRo/infra.git
     targetRevision: HEAD
-    path: dev                 # Path in the repo
+    path: dev
+    directory:
+      recurse: true
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev            # This should match the allowed namespace
+    namespace: dev           
 
   syncPolicy:
     syncOptions:
